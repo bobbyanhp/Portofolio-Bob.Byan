@@ -30,7 +30,7 @@ export default function Page() {
             </ul>
 
             <a
-              href="https://drive.google.com/file/d/1ZCHK6CzIJ2S1yQU4NzWDysU1jfyqbTR2/view?usp=sharing"
+              href="https://drive.google.com/file/d/1LudW7KcUZPiI6hibKvVeQH8OiGmm-3cb/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-full bg-indigo-700 px-4 sm:px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
@@ -53,7 +53,7 @@ export default function Page() {
 
               <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
                 <a
-                  href="https://wa.me/6282120569078?text=Hai%20saya%20tertarik%20untuk%20diskusi%20UI%2FUX%20%F0%9F%91%8B"
+                  href="https://wa.me/6282120569078?text=Hai%20saya%20tertarik%20untuk%20diskusi%20%F0%9F%91%8B"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center rounded-full bg-indigo-700 px-5 sm:px-6 py-3 text-sm font-semibold text-white shadow hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
