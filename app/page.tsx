@@ -30,7 +30,7 @@ export default function Page() {
             </ul>
 
             <a
-              href="https://drive.google.com/file/d/1LudW7KcUZPiI6hibKvVeQH8OiGmm-3cb/view?usp=sharing"
+              href="https://drive.google.com/file/d/1H8Ofo_M8GodtlyjCThxqxKRGy80pM6Yg/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-full bg-indigo-700 px-4 sm:px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
@@ -177,7 +177,7 @@ function AboutMe() {
             {[
               ["PHP", "Java", "JavaScript", "React", "Python", "Git"],
               ["HTML", "CSS", "Laravel", "Next.js", "MySQL", "MS Word"],
-              ["MS Excel", "Visual Studio Code", "PyCharm", "Figma", "Canva", "Spreadsheets"],
+              ["MS Excel", "Visual Studio Code", "PyCharm", "Figma", "Canva", "Google Workspace"],
             ].map((col, i) => (
               <ul key={i} className="space-y-3">
                 {col.map((t) => (
@@ -226,6 +226,13 @@ function CareerHistory() {
       company: "PT. Winnicode Garuda Teknologi - Bandung, Indonesia",
       tags: "Designed, developed, and implemented a full-stack news portal, participating end to end from conceptualization through launch while continuously analyzing the platform to identify opportunities for improvement and innovation.",
       period: "September 2024 - Desember 2024",
+    },
+    {
+      side: "left" as const,
+      title: "Technology Solution Staff Intern",
+      company: "PT. Bhakti Unggul Teknovasi - Bandung, Indonesia",
+      tags: "Support the provision of IT services including software license management, server maintenance, and web application implementation to meet user and company project requirements, while also managing procurement processes by ensuring the accuracy of quotations and purchase orders, verifying distributor stock availability, and confirming the completeness of client contract or purchase order documents before processing orders.",
+      period: "November 2025 - Present",
     },
   ];
 
