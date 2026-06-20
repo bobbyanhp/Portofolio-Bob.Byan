@@ -7,6 +7,7 @@ import type { Experience } from "@/data/experiences";
 import type { Project, ProjectImage } from "@/data/projects";
 import { useCmsContent } from "@/app/components/useCmsContent";
 import { logout, saveCmsContent } from "./actions";
+import ImageUploadField from "./ImageUploadField";
 
 type Tab = "profile" | "skills" | "experiences" | "projects";
 
@@ -198,8 +199,8 @@ function ProfileEditor({ content, updateProfile }: { content: ReturnType<typeof 
         <TextInput label="id" value="main" onChange={() => undefined} disabled />
         <TextInput label="name" value={content.profile.name} onChange={(value) => updateProfile({ name: value })} />
         <TextInput label="full_name" value={content.profile.fullName} onChange={(value) => updateProfile({ fullName: value })} />
-        <TextInput label="hero_image_path" value={content.profile.heroImage} onChange={(value) => updateProfile({ heroImage: value })} />
-        <TextInput label="about_image_path" value={content.profile.aboutImage} onChange={(value) => updateProfile({ aboutImage: value })} />
+        <ImageUploadField label="hero_image_path" value={content.profile.heroImage} folder="profiles/hero" onChange={(heroImage) => updateProfile({ heroImage })} />
+        <ImageUploadField label="about_image_path" value={content.profile.aboutImage} folder="profiles/about" onChange={(aboutImage) => updateProfile({ aboutImage })} />
         <TextInput label="cv_url" value={content.profile.cvUrl} onChange={(value) => updateProfile({ cvUrl: value })} />
         <TextInput label="linkedin_url" value={linkedIn} onChange={(value) => updateSocial("LinkedIn", value)} />
         <TextInput label="github_url" value={gitHub} onChange={(value) => updateSocial("GitHub", value)} />
@@ -383,7 +384,7 @@ function ProjectEditor({ projects, setProjects }: { projects: Project[]; setProj
                   <TextInput label="title" value={item.title} onChange={(value) => update(index, { title: value })} />
                   <TextInput label="role" value={item.role} onChange={(value) => update(index, { role: value })} />
                   <TextInput label="project_url" value={item.url} onChange={(value) => update(index, { url: value })} />
-                  <TextInput label="main_image_path" value={item.img} onChange={(value) => update(index, { img: value })} />
+                  <ImageUploadField label="main_image_path" value={item.img} folder={`projects/${item.id}/main`} onChange={(img) => update(index, { img })} />
                   <NumberInput label="sort_order" value={item.sortOrder} onChange={(value) => update(index, { sortOrder: value })} />
                   <CheckboxInput label="published" checked={item.published} onChange={(published) => update(index, { published })} />
                 </div>
@@ -404,7 +405,7 @@ function ProjectEditor({ projects, setProjects }: { projects: Project[]; setProj
                       <div key={image.id} className="bg-white p-4 ring-1 ring-slate-200">
                         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                           <TextInput label="id" value={image.id} onChange={() => undefined} disabled />
-                          <TextInput label="storage_path" value={image.path} onChange={(path) => updateGallery(index, imageIndex, { path })} />
+                          <ImageUploadField label="storage_path" value={image.path} folder={`projects/${item.id}/gallery`} onChange={(path) => updateGallery(index, imageIndex, { path })} />
                           <TextInput label="alt_text" value={image.altText} onChange={(altText) => updateGallery(index, imageIndex, { altText })} />
                           <NumberInput label="sort_order" value={image.sortOrder} onChange={(sortOrder) => updateGallery(index, imageIndex, { sortOrder })} />
                         </div>
