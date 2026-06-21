@@ -50,7 +50,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-white/60 bg-white/75 shadow-sm backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
         <a href="#home" className="shrink-0 text-xl font-black tracking-tight text-indigo-700 sm:text-2xl">
-          Bob Byan Portofolio
+          Bob Byan Portfolio
         </a>
 
         <ul className="hidden items-center gap-8 text-sm font-bold text-slate-700 md:flex lg:gap-12">

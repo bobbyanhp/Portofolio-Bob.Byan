@@ -32,13 +32,8 @@ export default function HeroSection() {
           </div>
 
           <div className="mt-7 flex flex-wrap items-center gap-3 sm:mt-9 sm:gap-4">
-            <a href="#portfolio" className="inline-flex items-center gap-3 rounded-2xl border border-indigo-300/50 bg-indigo-700/75 px-6 py-4 text-sm font-bold text-white shadow-lg shadow-indigo-700/20 backdrop-blur hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-400">
-              Portfolio
-              <ExternalIcon />
-            </a>
-
-            <a href="#experience" className="inline-flex items-center gap-3 rounded-2xl border border-indigo-300/50 bg-indigo-600/55 px-6 py-4 text-sm font-bold text-white shadow-lg shadow-indigo-700/15 backdrop-blur hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
-              Work Experience
+            <a href={profile.cvUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-lg border border-indigo-300/50 bg-indigo-700 px-6 py-4 text-sm font-bold text-white shadow-lg shadow-indigo-700/20 hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+              CV
               <ExternalIcon />
             </a>
           </div>

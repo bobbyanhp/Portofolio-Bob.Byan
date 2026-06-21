@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import type { Project } from "@/data/projects";
-import { ArrowRightIcon, ExternalIcon } from "./Icons";
+import { ArrowRightIcon } from "./Icons";
 import { useCmsContent } from "./useCmsContent";
 
 export default function PortfolioSection() {
@@ -46,13 +46,8 @@ function WorkCard({ item }: { item: Project }) {
         <h3 className="mt-2 text-lg font-extrabold text-slate-900 group-hover:text-indigo-700">{item.title}</h3>
         <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-slate-600">{item.summary}</p>
 
-        <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-          <a href={item.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-sky-600 transition hover:text-sky-700">
-            Link
-            <ExternalIcon />
-          </a>
-
-          <a href={`/portfolio/${item.slug}`} className="inline-flex items-center gap-2 rounded-full bg-indigo-700 px-4 py-2 text-sm font-bold text-white transition hover:bg-indigo-800">
+        <div className="mt-5 flex justify-end">
+          <a href={`/portfolio/${item.slug}`} className="inline-flex items-center gap-2 rounded-lg bg-indigo-700 px-4 py-2 text-sm font-bold text-white transition hover:bg-indigo-800">
             Details
             <ArrowRightIcon />
           </a>
