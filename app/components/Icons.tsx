@@ -48,3 +48,40 @@ export function BriefcaseIcon({ className = "h-6 w-6" }: { className?: string })
     </svg>
   );
 }
+
+export function SunIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2" />
+      <path d="M12 20v2" />
+      <path d="m4.93 4.93 1.41 1.41" />
+      <path d="m17.66 17.66 1.41 1.41" />
+      <path d="M2 12h2" />
+      <path d="M20 12h2" />
+      <path d="m6.34 17.66-1.41 1.41" />
+      <path d="m19.07 4.93-1.41 1.41" />
+    </svg>
+  );
+}
+
+export function MoonIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M20.8 15.6A8.8 8.8 0 0 1 8.4 3.2 7.8 7.8 0 1 0 20.8 15.6Z" />
+    </svg>
+  );
+}
+
+export function LanguageIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 8h8" />
+      <path d="M9 4v4" />
+      <path d="M4 12c3.2-1 5.2-3.1 6-6" />
+      <path d="M6.5 9.5c1 1.6 2.3 2.8 4 3.5" />
+      <path d="M14 20l4-9 4 9" />
+      <path d="M15.4 17h5.2" />
+    </svg>
+  );
+}
