@@ -11,18 +11,25 @@ type ProjectWithImages = Pick<
   project_images: Pick<Tables<"project_images">, "id" | "storage_path" | "alt_text" | "sort_order">[];
 };
 
-export async function getCmsContent(): Promise<CmsContent> {
+export async function getCmsContent({ publicOnly = false }: { publicOnly?: boolean } = {}): Promise<CmsContent> {
   const supabase = await createClient();
+  let experiencesQuery = supabase.from("experiences").select("*").order("sort_order");
+  let projectsQuery = supabase
+    .from("projects")
+    .select("id,slug,title,project_url,main_image_path,summary,description,role,sort_order,published,project_images(id,storage_path,alt_text,sort_order)")
+    .order("sort_order")
+    .order("sort_order", { referencedTable: "project_images" });
+
+  if (publicOnly) {
+    experiencesQuery = experiencesQuery.eq("published", true);
+    projectsQuery = projectsQuery.eq("published", true);
+  }
 
   const [profileResult, skillsResult, experiencesResult, projectsResult] = await Promise.all([
     supabase.from("profiles").select("*").eq("id", "main").maybeSingle(),
     supabase.from("skills").select("*").order("group_index").order("sort_order"),
-    supabase.from("experiences").select("*").order("sort_order"),
-    supabase
-      .from("projects")
-      .select("id,slug,title,project_url,main_image_path,summary,description,role,sort_order,published,project_images(id,storage_path,alt_text,sort_order)")
-      .order("sort_order")
-      .order("sort_order", { referencedTable: "project_images" }),
+    experiencesQuery,
+    projectsQuery,
   ]);
 
   const error = profileResult.error ?? skillsResult.error ?? experiencesResult.error ?? projectsResult.error;

@@ -6,8 +6,11 @@ import SiteHeader from "./components/SiteHeader";
 import { CmsContentProvider } from "./components/CmsContentProvider";
 import { getCmsContent } from "@/lib/cms/queries";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default async function Page() {
-  const content = await getCmsContent();
+  const content = await getCmsContent({ publicOnly: true });
 
   return (
     <CmsContentProvider initialContent={content}>
